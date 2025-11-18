@@ -1,116 +1,45 @@
-# Cockerham Genealogy
-
----
-title: "Cockerham Surname Summary"
-date: 2025-11-17
-draft: false
----
-
 # Cockerham Surname Summary
 
-*Last updated: {{ .Date.Format "January 2, 2006" }}*
+*Updated: {{2025-11-04}}*
 
-The surname **Cockerham** is of Anglo-Saxon origin, derived from the village of Cockerham in Lancashire, England, near the River Cocker ("crooked river"). Earliest record: **John de Kokerham** in 1349 (York Freemen Register). Major U.S. migration began ~1650 with William Cockerham in Virginia.
+The surname **Cockerham** is of **Anglo-Saxon origin**, derived as a locational name from the village of Cockerham in Lancashire, England, near the River Cocker. The river's name traces back to ancient Celtic roots, from the pre-Roman British word *kukro* meaning "crooked" or "winding," combined with Old English *hām* (homestead) or *hamm* (enclosure by water). This evokes a "homestead by the winding river." The earliest recorded bearer was **John de Kokerham** in 1349, in the Register of Freemen of York during Edward III's reign—marking the surname's emergence amid England's Poll Tax era.
 
-Today: ~7,000 bearers worldwide (1 in 1,049,625), ~90% in the United States.
+Historically, Cockerham families were tied to rural Lancashire life, with early migrations to colonial America (e.g., William Cockerham arriving in Virginia c. 1650, contributing to Southern land deeds). Variants include Cockram, Cockrem, Cockran, Cochran, and Cockren, often regional (e.g., Cockram around Bristol). The name spread via 19th-century immigration, with occupational ties like farming and trades in UK censuses.
+
+Today, Cockerham ranks as the **71,148th most common surname globally** (stable since 2010s), held by ~7,000 people (1 in 1,049,625). It's predominantly in the **United States (90% of bearers)**, concentrated in the Southeast: North Carolina (18%), Texas (16%), Louisiana (14%), Mississippi, Florida, and Alabama. Smaller pockets exist in England (8%), Canada (1%), and 18 other countries. In the 2010 U.S. Census, it was ranked ~6,943rd (4,830 bearers), reflecting strong Anglo-North American roots.
 
 ![Cockerham Coat of Arms](/images/coat-of-arms.png)  
 *(Quarterly azure and argent, a chevron or between three cocks passant guardant; motto: "Vive Ut Vivas")*
 
-#### Population Growth Over Time
+## Historical Ranking Changes
+Track annual updates below—data sourced from U.S. Census and global databases. (Methodology: Ordinal incidence ranking; US proportion per 100k.)
 
-```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '16px'}}}%%
-lineChart
-    title Cockerham Surname Population (Estimated Bearers)
-    x-axis [1086, 1200, 1300, 1349, 1600, 1700, 1790, 1840, 1880, 1900, 2000, 2010, 2025]
-    y-axis Bearers 0 --> 8000
-    line US: 0,0,0,0,0,20,50,27,540,1000,4703,4830,4900
-    line Global: 10,30,100,200,300,300,300,70,700,1200,7000,7000,7000
-%%{init: {'theme': 'base'}}%%
-lineChart
-    title US Share of Global Cockerham Bearers (%)
-    x-axis [1086 → 2025]
-    y-axis Percentage 0 --> 100
-    line US % of Global: 0,0,0,0,0,7,17,39,77,83,90,90,90
-U.S. State Distribution (Selected Years)
-%%{init: {'theme': 'base'}}%%
-pie title 1840 (US: ~27 bearers)
-    "Mississippi" : 100
-%%{init: {'theme': 'base'}}%%
-pie title 1880 (US: ~540 bearers)
-    "North Carolina" : 20
-    "Texas" : 15
-    "Louisiana" : 12
-    "Mississippi" : 10
-    "Other States" : 43
-%%{init: {'theme': 'base'}}%%
-pie title 1900 est. (US: ~1,000 bearers)
-    "North Carolina" : 18
-    "Texas" : 18
-    "Louisiana" : 15
-    "Mississippi" : 9
-    "Other States" : 40
-Historical Ranking & Population Table
-US %
-Top US States (approx.)
-Year
-Global Rank
-Global Bearers
-US Rank
-US Bearers
-1086
-—
-~10
-—
-0
-0%
-(Village of Cockerham only)
-1349
-—
-~200
-—
-0
-0%
-England only
-1880
-—
-~700
-—
-~540
-77%
-NC, TX, LA, MS
-2000
-~70,000th
-~7,000
-6,633rd
-4,703
-90%
-NC 18%, TX 16%, LA 14%
-2010
-71,148th
-~7,000
-6,943rd
-4,830
-90%
-Stable Southeast concentration
-2025 est.
-71,148th
-~7,000
-~7,000th
-~4,900
-90%
-Minor urbanization decline
-Next census data release: 2032 (individual records 2092)
-External Resources
-FamilySearch
-Ancestry Origin
-Forebears Distribution
-SurnameDB Etymology
-FamilyTreeDNA Project
-WikiTree Profiles
-Contact
-X: @JamesCockerham
-Email: james@cockerh.am
-Site: james.cockerh.am
-View edit history on GitHub
+| Year | Global Rank | Global Bearers | US Rank | US Bearers | US Proportion/100k | Notes |
+|------|-------------|----------------|---------|------------|--------------------|-------|
+| 2000 | ~70,000th  | ~7,000        | 6,633rd| 4,703     | 1.74              | Pre-digital migration peak<grok:render card_id="baf140" card_type="citation_card" type="render_inline_citation"><argument name="citation_id">12</argument></grok:render> |
+| 2010 | 71,148th   | ~7,000        | 6,943rd| 4,830     | 1.64              | +2.7% growth; slight rank slip due to population rise<grok:render card_id="25346f" card_type="citation_card" type="render_inline_citation"><argument name="citation_id">12</argument></grok:render><grok:render card_id="b82e84" card_type="citation_card" type="render_inline_citation"><argument name="citation_id">13</argument></grok:render> |
+| 2025 | 71,148th   | ~7,000        | ~7,000th| ~4,900    | ~1.50             | Stable globally; minor US decline from urbanization<grok:render card_id="38d76a" card_type="citation_card" type="render_inline_citation"><argument name="citation_id">0</argument></grok:render><grok:render card_id="6f9eb9" card_type="citation_card" type="render_inline_citation"><argument name="citation_id">10</argument></grok:render> |
+
+*Sources: Forebears.io (global), U.S. Census Bureau (US). Next update: Nov 2026.*
+
+## External Resources
+- [FamilySearch: Cockerham Family Trees & Records](https://www.familysearch.org/en/surname?surname=Cockerham) – Free global database with birth, death, and immigration records.
+- [Ancestry: Origin, Meaning & Census History](https://www.ancestry.com/name-origin?surname=cockerham) – 20,000+ U.S. census entries and habitational details.
+- [Forebears: Global Distribution](https://forebears.io/surnames/cockerham) – Maps, prevalence stats, and phonetic variants.
+- [SurnameDB: Etymology & Early Records](https://surnamedb.com/Surname/Cockerham) – Full linguistic breakdown and 1349 York origins.
+- [FamilyTreeDNA: Cockerham Y-DNA Project](https://www.familytreedna.com/groups/cockerham/about/background) – Paternal lineage tracking back to 1066 AD, with variant matches.
+- [WikiTree: Collaborative Cockerham Trees](https://www.wikitree.com/genealogy/COCKERHAM) – 770+ community profiles worldwide.
+- [Geni: Cockerham Profiles & Stories](https://www.geni.com/surnames/cockerham) – 1,944 entries, including early Virginia settlers.
+- [MyHeritage: Historical Collections](https://www.myheritage.com/names/john_cockerham) – Certificates and global immigration data.
+- [Findmypast: UK Census & Jobs Data](https://www.findmypast.co.uk/surname/cockerham) – Occupational trends and popularity over time.
+- [Geneanet: Geographic Spread](https://en.geneanet.org/surnames/COCKERHAM) – Maps and 5,497+ indexed individuals from 1600 onward.
+
+## Contact & Connections
+Connect with me on X (formerly Twitter) for discussions on genealogy, teaching, or psychic mapping:  
+**@JamesCockerham** – Pioneering psychic technology | Transformative map sessions | DM for bookings 🌌 #MindTech #PsychicMapping  
+
+(Email: james@cockerh.am | Site: [james.cockerh.am](https://james.cockerh.am))  
+
+This page is a living summary—feel free to reach out with your own Cockerham stories!
+
+[View Version History on GitHub](https://github.com/jamescockerham/cockerham-surname/commits/main)  # Link to your repo for changes
