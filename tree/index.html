@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Family Tree — Cockerh.am</title>
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌳</text></svg>">
   <script src="https://balkangraph.com/js/latest/OrgChart.js"></script>
 </head>
 <body class="light">
@@ -33,10 +34,16 @@
 
   <main>
     <h1>Interactive Global Cockerham Family Tree</h1>
-    <p style="text-align:center;">Zoom • Pan • Click nodes • Add yourself</p>
+    <p style="text-align:center;max-width:700px;margin:30px auto;font-size:1.1em;">
+      Zoom, pan, click any box. Every node was added by a cousin — you can be next.
+    </p>
+
     <div id="tree"></div>
-    <p style="text-align:center;margin:40px 0;">
-      <a href="https://github.com/jamescockerham/Cockerh.am/issues/new?template=add-to-tree.md" class="button">+ Add Your Branch (2 minutes)</a>
+
+    <p style="text-align:center;margin:50px 0 20px;">
+      <a href="https://github.com/jamescockerham/Cockerh.am/issues/new/choose" class="button">
+        + Add Yourself or Your Branch (2 minutes)
+      </a>
     </p>
   </main>
 
@@ -46,43 +53,53 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Hamburger menu
       const hamburger = document.getElementById('hamburger');
       const nav = document.getElementById('main-nav');
-      const toggle = document.getElementById('theme-toggle');
-      const body = document.body;
-
       hamburger.addEventListener('click', () => {
         const expanded = hamburger.getAttribute('aria-expanded') === 'true';
         hamburger.setAttribute('aria-expanded', !expanded);
         nav.classList.toggle('open');
       });
 
-      nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-        nav.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
+      // Close menu when clicking a link
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
       });
 
+      // Dark / Light mode
+      const toggle = document.getElementById('theme-toggle');
+      const body = document.body;
       if (localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         body.classList.add('dark');
         toggle.textContent = '🌙';
       } else {
         toggle.textContent = '☀️';
       }
-
       toggle.addEventListener('click', () => {
         body.classList.toggle('dark');
         toggle.textContent = body.classList.contains('dark') ? '🌙' : '☀️';
         localStorage.theme = body.classList.contains('dark') ? 'dark' : 'light';
       });
 
-      // Family tree
+      // Load the family tree
       new OrgChart(document.getElementById("tree"), {
-        nodeBinding: { field_0: "name", field_1: "born" },
+        mouseScrol: OrgChart.action.zoom,
+        nodeMouseClick: OrgChart.action.none,
+        layout: OrgChart.tree,
+        nodeBinding: {
+          field_0: "name",
+          field_1: "born"
+        },
         nodes: [
-          { id: 1, name: "Cockerham of Lancashire", born: "1086–1600s" },
-          { id: 2, pid: 1, name: "Captain William Cockerham", born: "c.1593–1669 · Virginia" },
+          { id: 1, name: "Cockerham of Lancashire", born: "1086–1600s · England" },
+          { id: 2, pid: 1, name: "Captain William Cockerham", born: "c.1593–1669 · Virginia pioneer" },
           { id: 3, pid: 2, name: "Moses & Daniel lines", born: "1700s · Surry Co., NC" },
-          { id: 4, pid: 1, name: "James Cockerham", born: "site creator · present" }
+          { id: 4, pid: 1, name: "James Cockerham", born: "site creator · present day" }
+          // more nodes appear automatically when issues are merged
         ]
       });
     });
