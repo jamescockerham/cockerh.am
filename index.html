@@ -12,40 +12,41 @@
   <header>
     <h1>Cockerh.am</h1>
     <p>One surname. Thousands of cousins. One collaborative home.</p>
-    <button id="theme-toggle" aria-label="Toggle dark mode">☀️</button>
   </header>
 
-  <nav>
-    <div class="nav-container">
-      <button id="hamburger" aria-label="Menu">☰</button>
-      <ul id="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/history/">History & Statistics</a></li>
-        <li><a href="/tree/">Family Tree</a></li>
-        <li><a href="/archive/">Archive</a></li>
-        <li><a href="/dna/">DNA Project</a></li>
-        <li><a href="/resources/">Resources</a></li>
-        <li><a href="https://github.com/jamescockerham/Cockerh.am/issues/new/choose"><strong>Contribute →</strong></a></li>
-      </ul>
-    </div>
+  <div class="nav-bar">
+    <button id="hamburger" aria-label="Menu">☰</button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">☀️</button>
+  </div>
+
+  <nav id="main-nav">
+    <ul id="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/history/">History & Statistics</a></li>
+      <li><a href="/tree/">Family Tree</a></li>
+      <li><a href="/archive/">Archive</a></li>
+      <li><a href="/dna/">DNA Project</a></li>
+      <li><a href="/resources/">Resources</a></li>
+      <li><a href="https://github.com/jamescockerham/Cockerh.am/issues/new/choose" class="contrib">Contribute →</a></li>
+    </ul>
   </nav>
 
   <main>
-    <h1 style="text-align:center;margin-top:60px;">Welcome, Cousin</h1>
-    <p style="text-align:center;font-size:1.3em;max-width:700px;margin:40px auto;">
-      This is the living, collaborative home for every Cockerham (and Cockram, Cockrem…) on Earth.
+    <h1 style="text-align:center;margin-top:40px;">Welcome, Cousin</h1>
+    <p style="text-align:center;font-size:1.3em;max-width:720px;margin:40px auto;">
+      The open, ever-growing hub for every Cockerham (and Cockram, Cockrem…) on Earth.
     </p>
 
-    <div style="display:grid;gap:30px;max-width:800px;margin:60px auto;text-align:center;">
-      <a href="/history/" class="button" style=width:100%;padding:20px;">Surname History & Live Statistics</a>
-      <a href="/tree/" class="button" style="width:100%;padding:20px;">Interactive Global Family Tree</a>
-      <a href="/dna/" class="button" style="width:100%;padding:20px;">Y-DNA Project</a>
-      <a href="/archive/" class="button" style="width:100%;padding:20px;">Photo & Document Archive</a>
+    <div style="display:grid;gap:25px;margin:60px auto;max-width:600px;text-align:center;">
+      <a href="/history/" class="button">Surname History & Live Statistics</a>
+      <a href="/tree/" class="button">Interactive Global Family Tree</a>
+      <a href="/dna/" class="button">Y-DNA Project</a>
+      <a href="/archive/" class="button">Photo & Document Archive</a>
     </div>
 
     <div class="cta">
-      <p>Got something to add? It takes 2 minutes and no coding.</p>
-      <a href="https://github.com/jamescockerham/Cockerh.am/issues/new/choose" class="button">Contribute Now</a>
+      <p>Have a photo, Bible record, DNA result, or just know your grandparents’ names?</p>
+      <a href="https://github.com/jamescockerham/Cockerh.am/issues/new/choose" class="button">Contribute in 2 minutes – no coding needed</a>
     </div>
   </main>
 
@@ -55,16 +56,26 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('hamburger').addEventListener('click', () => document.getElementById('nav-links').classList.toggle('open'));
-      const t = document.getElementById('theme-toggle');
-      const b = document.body;
+      const hamburger = document.getElementById('hamburger');
+      const nav = document.getElementById('main-nav');
+      const toggle = document.getElementById('theme-toggle');
+      const body = document.body;
+
+      hamburger.addEventListener('click', () => nav.classList.toggle('open'));
+
+      nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
       if (localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        b.classList.add('dark'); t.textContent = '🌙';
+        body.classList.add('dark');
+        toggle.textContent = '🌙';
+      } else {
+        toggle.textContent = '☀️';
       }
-      t.addEventListener('click', () => {
-        b.classList.toggle('dark');
-        t.textContent = b.classList.contains('dark') ? '🌙' : '☀️';
-        localStorage.theme = b.classList.contains('dark') ? 'dark' : 'light';
+
+      toggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        toggle.textContent = body.classList.contains('dark') ? '🌙' : '☀️';
+        localStorage.theme = body.classList.contains('dark') ? 'dark' : 'light';
       });
     });
   </script>
