@@ -1,13 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><title>DNA Project — Cockerh.am</title><link rel="stylesheet" href="/assets/css/style.css"></head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DNA Project — Cockerh.am</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
 <body class="light">
-  <!-- Same header + nav -->
+
+  <header>
+    <h1>Cockerh.am</h1>
+    <p>One surname. Thousands of cousins. One collaborative home.</p>
+  </header>
+
+  <div class="nav-bar">
+    <button id="hamburger" aria-label="Menu" aria-expanded="false">☰</button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">☀️</button>
+  </div>
+
+  <nav id="main-nav" aria-label="Main navigation">
+    <ul id="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/history/">History & Statistics</a></li>
+      <li><a href="/tree/">Family Tree</a></li>
+      <li><a href="/archive/">Archive</a></li>
+      <li><a href="/dna/">DNA Project</a></li>
+      <li><a href="/resources/">Resources</a></li>
+      <li><a href="https://github.com/jamescockerham/Cockerh.am/issues/new/choose" class="contrib">Contribute →</a></li>
+    </ul>
+  </nav>
+
   <main>
     <h1>Cockerham Y-DNA Project</h1>
-    <p>Public table of all tested paternal lines — anonymous if you prefer.</p>
-    <p style="text-align:center;"><a href="https://github.com/jamescockerham/Cockerh.am/issues/new?template=submit-dna.md" class="button">Submit Your Results</a></p>
+    <p style="font-size:1.2em;text-align:center;max-width:700px;margin:40px auto;">
+      Public table of all tested paternal lines · R-BY33587 confirmed for nearly every tester.
+    </p>
+    <p style="text-align:center;">
+      <a href="https://github.com/jamescockerham/Cockerh.am/issues/new?template=submit-dna.md" class="button">Submit Your Results (anonymous OK)</a>
+    </p>
   </main>
-  <!-- same footer + script -->
+
+  <footer>
+    <p>Maintained with love by James Cockerham • <a href="https://x.com/JamesCockerham">@JamesCockerham</a> • james@cockerh.am</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.getElementById('hamburger');
+      const nav = document.getElementById('main-nav');
+      const toggle = document.getElementById('theme-toggle');
+      const body = document.body;
+
+      hamburger.addEventListener('click', () => {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', !expanded);
+        nav.classList.toggle('open');
+      });
+
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      if (localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        body.classList.add('dark');
+        toggle.textContent = '🌙';
+      } else {
+        toggle.textContent = '☀️';
+      }
+
+      toggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        toggle.textContent = body.classList.contains('dark') ? '🌙' : '☀️';
+        localStorage.theme = body.classList.contains('dark') ? 'dark' : 'light';
+      });
+    });
+  </script>
 </body>
 </html>

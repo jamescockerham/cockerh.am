@@ -3,52 +3,50 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>External Resources — Cockerh.am</title>
+  <title>Resources — Cockerh.am</title>
   <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌳</text></svg>">
 </head>
 <body class="light">
 
   <header>
     <h1>Cockerh.am</h1>
     <p>One surname. Thousands of cousins. One collaborative home.</p>
-    <button id="theme-toggle" aria-label="Toggle dark mode">☀️</button>
   </header>
 
-  <nav>
-    <div class="nav-container">
-      <button id="hamburger" aria-label="Menu">☰</button>
-      <ul id="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/history/">History</a></li>
-        <li><a href="/tree/">Family Tree</a></li>
-        <li><a href="/stats/">Statistics</a></li>
-        <li><a href="/archive/">Archive</a></li>
-        <li><a href="/dna/">DNA Project</a></li>
-        <li><a href="/resources/">Resources</a></li>
-        <li><a href="https://github.com/jamescockerham/Cockerh.am/issues/new/choose"><strong>Contribute →</strong></a></li>
-      </ul>
-    </div>
+  <div class="nav-bar">
+    <button id="hamburger" aria-label="Menu" aria-expanded="false">☰</button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">☀️</button>
+  </div>
+
+  <nav id="main-nav" aria-label="Main navigation">
+    <ul id="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/history/">History & Statistics</a></li>
+      <li><a href="/tree/">Family Tree</a></li>
+      <li><a href="/archive/">Archive</a></li>
+      <li><a href="/dna/">DNA Project</a></li>
+      <li><a href="/resources/">Resources</a></li>
+      <li><a href="https://github.com/jamescockerham/Cockerh.am/issues/new/choose" class="contrib">Contribute →</a></li>
+    </ul>
   </nav>
 
   <main>
     <h1>External Research Resources</h1>
-    <p style="font-size:1.1em;margin-bottom:40px;">The best places Cockerham researchers actually use — all verified working November 2025.</p>
+    <p style="font-size:1.1em;margin-bottom:40px;text-align:center;">The best places Cockerham researchers actually use — all verified working November 2025.</p>
 
     <ul style="font-size:1.15em;line-height:2.2;">
-      <li>🌍 <a href="https://forebears.io/surnames/cockerham" target="_blank">Forebears — Global Distribution, Ranking & Maps</a></li>
-      <li>🧬 <a href="https://www.familytreedna.com/groups/cockerham/about/background" target="_blank">FamilyTreeDNA Cockerham Surname Project</a> (official Y-DNA project — join here!)</li>
-      <li>🛡️ <a href="https://www.houseofnames.com/cockerham-family-crest" target="_blank">House of Names — Coat of Arms & Early History</a></li>
-      <li>📜 <a href="https://www.ancestry.com/name-origin?surname=cockerham" target="_blank">Ancestry.com — Records & Origin Info</a></li>
-      <li>🔍 <a href="https://www.familysearch.org/search/record/results?q.surname=Cockerham" target="_blank">FamilySearch — Free Historical Records</a></li>
-      <li>⚰️ <a href="https://www.findagrave.com/memorial/search?lastname=cockerham" target="_blank">Find a Grave — Cemeteries & Memorials</a></li>
-      <li>🌳 <a href="https://www.wikitree.com/genealogy/COCKERHAM" target="_blank">WikiTree — Collaborative Cockerham Tree</a></li>
-      <li>👥 <a href="https://www.geni.com/surnames/cockerham" target="_blank">Geni.com — Cockerham Profiles (1,900+)</a></li>
+      <li>🌍 <a href="https://forebears.io/surnames/cockerham" target="_blank">Forebears — Global Distribution & Ranking</a></li>
+      <li>🧬 <a href="https://www.familytreedna.com/groups/cockerham/about/background" target="_blank">FamilyTreeDNA Cockerham Surname Project</a></li>
+      <li>🛡️ <a href="https://www.houseofnames.com/cockerham-family-crest" target="_blank">House of Names — Coat of Arms</a></li>
+      <li>📜 <a href="https://www.ancestry.com/name-origin?surname=cockerham" target="_blank">Ancestry.com Records</a></li>
+      <li>🔍 <a href="https://www.familysearch.org/search/record/results?q.surname=Cockerham" target="_blank">FamilySearch — Free Records</a></li>
+      <li>⚰️ <a href="https://www.findagrave.com/memorial/search?lastname=cockerham" target="_blank">Find a Grave</a></li>
+      <li>🌳 <a href="https://www.wikitree.com/genealogy/COCKERHAM" target="_blank">WikiTree Cockerham Genealogy</a></li>
+      <li>👥 <a href="https://www.geni.com/surnames/cockerham" target="_blank">Geni.com Cockerham Profiles</a></li>
     </ul>
 
     <div class="cta">
-      <p>Found a better or missing resource?<br>
-      <a href="https://github.com/jamescockerham/Cockerh.am/issues/new/choose" class="button">Suggest it here</a></p>
+      <p>Found a better resource or a broken link?<br><a href="https://github.com/jamescockerham/Cockerh.am/issues/new/choose" class="button">Tell us</a></p>
     </div>
   </main>
 
@@ -57,16 +55,37 @@
   </footer>
 
   <script>
-    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('nav-links').classList.toggle('open'));
-    const t = document.getElementById('theme-toggle');
-    const b = document.body;
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      b.classList.add('dark'); t.textContent = '🌙';
-    }
-    t.addEventListener('click', () => {
-      b.classList.toggle('dark');
-      t.textContent = b.classList.contains('dark') ? '🌙' : '☀️';
-      localStorage.theme = b.classList.contains('dark') ? 'dark' : 'light';
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.getElementById('hamburger');
+      const nav = document.getElementById('main-nav');
+      const toggle = document.getElementById('theme-toggle');
+      const body = document.body;
+
+      hamburger.addEventListener('click', () => {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', !expanded);
+        nav.classList.toggle('open');
+      });
+
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      if (localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        body.classList.add('dark');
+        toggle.textContent = '🌙';
+      } else {
+        toggle.textContent = '☀️';
+      }
+
+      toggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        toggle.textContent = body.classList.contains('dark') ? '🌙' : '☀️';
+        localStorage.theme = body.classList.contains('dark') ? 'dark' : 'light';
+      });
     });
   </script>
 </body>
