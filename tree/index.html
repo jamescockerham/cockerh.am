@@ -3,31 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Global Cockerham Family Tree</title>
+  <title>Interactive Family Tree — Cockerh.am</title>
   <link rel="stylesheet" href="/assets/css/style.css">
   <script src="https://balkangraph.com/js/latest/OrgChart.js"></script>
 </head>
-<body>
-  <header><h1>Interactive Global Family Tree</h1><p>Zoom, pan, click nodes — and add yourself!</p></header>
-  <nav><!-- same nav --></nav>
+<body class="light">
+  <!-- Same header + nav as above -->
 
   <main>
+    <h1>Global Cockerham Family Tree</h1>
+    <p>Zoom, pan, click any node. Add yourself in 2 minutes.</p>
     <div id="tree"></div>
-    <p style="text-align:center;margin:30px;">
-      <a href="https://github.com/jamescockerham/Cockerh.am/issues/new?template=add-to-tree.md" class="button">+ Add Yourself or Your Branch (2 min)</a>
+    <p style="text-align:center;margin:40px 0;">
+      <a href="https://github.com/jamescockerham/Cockerh.am/issues/new?template=add-to-tree.md" class="button">+ Add Yourself or Your Branch</a>
     </p>
   </main>
 
   <script>
     var chart = new OrgChart(document.getElementById("tree"), {
       nodeBinding: { field_0: "name", field_1: "born" },
+      layout: OrgChart.tree,
+      orientation: OrgChart.orientation.top,
       nodes: [
-        { id: 1, name: "Cockerham of Lancashire", born: "1200s–1600s, England" },
-        { id: 2, pid: 1, name: "Early American Immigrants", born: "1600s–1700s" },
-        { id: 3, pid: 2, name: "James Cockerham", born: "Present day – site creator" },
-        // cousins will appear here automatically when you merge their issues
+        { id: 1, name: "Cockerham of Lancashire", born: "1086–1500s, England" },
+        { id: 2, pid: 1, name: "Captain William Cockerham", born: "c.1593–1669, Virginia pioneer" },
+        { id: 3, pid: 2, name: "Moses & Daniel line", born: "1700s Surry Co., NC" },
+        { id: 4, pid: 1, name: "James Cockerham", born: "site creator – present day" }
       ]
     });
   </script>
+  <!-- same footer + script -->
 </body>
 </html>
