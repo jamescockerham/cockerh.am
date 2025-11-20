@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 * { box-sizing: border-box; margin:0; padding:0; }
+html, body { height: 100%; overflow-x: hidden; }
 body { font-family: 'Inter', system-ui, sans-serif; line-height: 1.7; transition: background 0.4s, color 0.4s; }
 body.light { background:#fcfcfc; color:#1f2937; }
 body.dark  { background:#0f172a; color:#e2e8f0; }
 
-/* Blue header */
 header {
   background: linear-gradient(135deg, #1e3a8a, #3b82f6);
   color: white;
@@ -14,9 +14,10 @@ header {
 }
 header h1 { font-size: 3.8rem; font-weight: 800; margin:0; text-shadow: 0 4px 12px rgba(0,0,0,0.4); }
 
-/* Navigation bar – hamburger left, toggle right */
+/* Navigation bar — now bulletproof */
 .nav-bar {
   position: sticky;
+  position: -webkit-sticky; /* Safari */
   top: 0;
   background: white;
   padding: 12px 20px;
@@ -24,20 +25,29 @@ header h1 { font-size: 3.8rem; font-weight: 800; margin:0; text-shadow: 0 4px 12
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  z-index: 1000;
+  z-index: 9999;
 }
-body.dark .nav-bar { background:#0f172a; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
-.nav-bar button { background:none; border:none; font-size:2rem; cursor:pointer; }
+body.dark .nav-bar { background:#0f172a; box-shadow: 0 0 4px 12px rgba(0,0,0,0.6); }
 
-/* The actual dropdown menu */
+.nav-bar button {
+  background:none;
+  border:none;
+  font-size:2rem;
+  cursor:pointer;
+  padding:8px;
+  line-height: 1;
+}
+
+/* Dropdown menu */
 #main-nav {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.35s ease;
+  transition: max-height 0.35s ease-out;
   background: white;
+  z-index: 9998;
 }
 body.dark #main-nav { background:#0f172a; }
-#main-nav.open { max-height: 700px; }
+#main-nav.open { max-height: 800px; }
 
 #main-nav ul {
   list-style: none;
@@ -54,7 +64,7 @@ body.dark #main-nav { background:#0f172a; }
 body.dark #main-nav a { color:#93c5fd; }
 #main-nav a.contrib { color:#16a34a; font-weight:600; font-size:1.35rem; }
 
-/* Desktop: horizontal menu, hide the bar */
+/* Desktop horizontal menu */
 @media (min-width: 768px) {
   .nav-bar { display: none; }
   #main-nav {
